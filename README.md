@@ -1,24 +1,43 @@
-# README
+# GosyuinBook
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## usersテーブル
+| Column 　　   　| Type       | Options                        |
+| -------------- | ---------- | ------------------------------ |
+| email          | string     | null: false                    |
+| password       | string     | null: false                    |
+| name           | string     | null: false                    |
+| profile        | text       | null: false                    |
+| prefecture_id  | integer    | null: false                    |
 
-Things you may want to cover:
+### Association
+- has_many gosyuins
+- has_many comments
 
-* Ruby version
+## gosyuinsテーブル
+| Column 　　   　| Type       | Options                        |
+| -------------- | ---------- | ------------------------------ |
+| title          | string     | null: false                    |
+| prefecture_id  | integer    | null: false                    |
+| stamp_id       | integer    | null: false                    |
+| limited_id     | integer    | null: false                    |
+| caption        | text       | null: false                    |
+| image          | ActiveStorage                               |
+| user           | references |foreign_key:true                |
 
-* System dependencies
+### Association
+- belongs_to user
+- belongs_to_active_hash prefecture_id
+- belongs_to_active_hash stamp_id
+- belongs_to_active_hash limited_id
 
-* Configuration
 
-* Database creation
+## commentsテーブル
+| Column 　　   　| Type       | Options                        |
+| -------------- | ---------- | ------------------------------ |
+| text           | text       | null: false                    |
+| user           | references | foreign_key: true              |
+| gosyuin        | references | foreign_key: true              |
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### Association
+- belongs_to gosyuin
+- belongs_to user
