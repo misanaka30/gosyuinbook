@@ -1,0 +1,31 @@
+/* ヘッダー */
+.header {
+  background-color: #dbd4da;
+  margin-bottom: 48px;
+  padding: 20px 0;
+}
+.inner {
+  width: 1024px;
+  margin: 0 auto;
+}
+.nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.logo {
+  width: 200px;
+}
+
+
+
+/* フッター */
+.footer {
+  background-color: rgb(139, 126, 148);
+  padding: 10px 0;
+}
+.copyright {
+  text-align: center;
+  color: #fff;
+  font-size: 10px;
+}
