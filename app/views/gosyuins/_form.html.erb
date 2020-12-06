@@ -1,0 +1,35 @@
+<%= form_with model: gosyuin, local: true do |f|%>
+  <div class="field">
+    <%= f.label :title, "名称" %><br />
+    <%= f.text_field :title %>
+  </div>
+
+　<div class="field">
+   <%= f.label :prefecture_id, "県名" %><br />
+   <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class:"select-box", id:"prefecture"}) %>
+  </div>
+
+  <div class="field">
+   <%= f.label :stamp_id, "記録するもの１" %><br />
+   <%= f.collection_select(:stamp_id, Stamp.all, :id, :name, {}, {class:"select-box", id:"stamp"}) %>
+  </div>
+
+  <div class="field">
+   <%= f.label :limited_id, "記録するもの２" %><br />
+   <%= f.collection_select(:limited_id, Limited.all, :id, :name, {}, {class:"select-box", id:"limited"}) %>
+  </div>
+
+  <div class="field">
+    <%= f.label :caption, "キャプション" %><br />
+    <%= f.text_area :caption, class: :form__text %>
+  </div>
+
+  <div class="field">
+    <%= f.label :image, "画像" %><br />
+    <%= f.file_field :image %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "保存する", class: :form__btn  %>
+  </div>
+<% end %>

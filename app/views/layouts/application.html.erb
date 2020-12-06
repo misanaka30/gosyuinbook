@@ -22,7 +22,7 @@
        <div class="head-right">
         <span>ユーザー名:</span><%= link_to "#{current_user.name}", "#", class: :greeting_link %>
         <%= link_to "ログアウト", destroy_user_session_path, class: :nav_logout, method: :delete %>
-        <%= link_to "新規投稿", "#", class: :nav_btn %>
+        <%= link_to "新規投稿", new_gosyuin_path , class: :nav_btn %>
        </div>
        
        <% else %>
