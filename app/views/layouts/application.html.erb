@@ -17,16 +17,21 @@
         <div class="head-left">
          <%= link_to image_tag("logo.png", class: :logo), root_path %>
         </div>
-    
-       <div class="head-left">
-         <h1>ログアウト</h1>
-         <h1>新規投稿</h1>
+       
+       <% if user_signed_in? %>
+       <div class="head-right">
+        <span>ユーザー名:</span><%= link_to "#{current_user.name}", "#", class: :greeting_link %>
+        <%= link_to "ログアウト", destroy_user_session_path, class: :nav_logout, method: :delete %>
+        <%= link_to "新規投稿", "#", class: :nav_btn %>
+       </div>
+       
+       <% else %>
+       <div class="head-right">
+         <%= link_to "ログイン", new_user_session_path, class: :nav_btn %>
+         <%= link_to "新規登録", new_user_registration_path, class: :nav_btn %>
        </div>
 
-       <div class="head-left">
-         <h1>ログイン</h1>
-         <h1>新規登録</h1>
-       </div>
+       <% end %>
       </div>
      </div>
     </header>
