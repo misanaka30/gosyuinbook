@@ -14,7 +14,7 @@
         <% end %>
       <%# // プロトタイプの投稿者とログインしているユーザーが同じであれば上記を表示する %>
       <div class="gosyuin_image">
-        <%= image_tag @gosyuin.image %>
+        <%= image_tag @gosyuin.image.variant(resize: '700x700'), class: :gosyuin_img %>
       </div>
       <div class="gosyuin_body">
         <div class="gosyuin_detail">
@@ -30,7 +30,8 @@
           <p class="detail_title">【　希少度　】<%= @gosyuin.limited.name %></p>
         </div>
         <div class="gosyuin_detail">
-          <p class="detail_title">【　説明文　】<%= @gosyuin.caption %></p>
+          <p class="detail_caption">【　説明文　】</p>
+          <p class="detail_caption"> <%= @gosyuin.caption %> </p>
         </div>
 
       </div>
