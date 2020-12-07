@@ -8,7 +8,7 @@
       <%# プロトタイプの投稿者とログインしているユーザーが同じであれば以下を表示する %>
       <% if user_signed_in? && current_user.id == @gosyuin.user_id %>
         <div class="gosyuin_manage">
-          <%#= link_to "編集", edit_gosyuin_path, class: :gosyuin_btn %>
+          <%= link_to "編集", edit_gosyuin_path, class: :gosyuin_btn %>
           <%#= link_to "削除", gosyuin_path(@gosyuin.id), method: :delete , class: :gosyuin_btn %>
         </div>
         <% end %>
@@ -30,7 +30,7 @@
           <p class="detail_title">【　希少度　】<%= @gosyuin.limited.name %></p>
         </div>
         <div class="gosyuin_detail">
-          <p class="detail_caption">【　説明文　】</p>
+          <p class="detail_title">【　説明文　】</p>
           <p class="detail_caption"> <%= @gosyuin.caption %> </p>
         </div>
 
