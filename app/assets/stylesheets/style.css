@@ -106,10 +106,10 @@
 .gosyuin_body{
   padding: 0.2em 0.5em;
   margin: 2em 0;
-  color: rgb(226, 221, 224);
-  background: rgb(145, 51, 96);
-  box-shadow: 0px 0px 0px 10px rgb(145, 51, 96);
-  border: dashed 2px  #ffeaea;
+  color: rgb(145, 51, 96);
+  background: #dbd4da;
+  box-shadow: 0px 0px 0px 10px #dbd4da;
+  border: dashed 2px rgb(145, 51, 96) ;
   border-radius: 8px;
 }
 .gosyuin_detail{
@@ -124,8 +124,6 @@
 }
 .detail_caption{
   font-size: 20px;
-  font-weight: bold;
-  
 }
 .gosyuin_manage{
   display: flex;
