@@ -2,21 +2,23 @@
   <div class="inner">
     <div class="gosyuin_wrapper">
       <p class="gosyuin_hedding">
+        <%= link_to "#{@gosyuin.user.name}", "#", class: :gosyuin_user %>
         <%= @gosyuin.title %>
       </p>
-      <%#= link_to "#{@gosyuin.user.name}", user_path(@gosyuin.user), class: :gosyuin_user %>
-      <%# プロトタイプの投稿者とログインしているユーザーが同じであれば以下を表示する %>
+
       <% if user_signed_in? && current_user.id == @gosyuin.user_id %>
         <div class="gosyuin_manage">
           <%= link_to "編集", edit_gosyuin_path, class: :gosyuin_btn %>
-          <%#= link_to "削除", gosyuin_path(@gosyuin.id), method: :delete , class: :gosyuin_btn %>
+          <%= link_to "削除", gosyuin_path(@gosyuin.id), method: :delete , class: :gosyuin_btn %>
         </div>
-        <% end %>
-      <%# // プロトタイプの投稿者とログインしているユーザーが同じであれば上記を表示する %>
+      <% end %>
+     
       <div class="gosyuin_image">
-        <%= image_tag @gosyuin.image.variant(resize: '700x700'), class: :gosyuin_img %>
+        <%= image_tag @gosyuin.image.variant(resize: '600x600'), class: :gosyuin_img %>
       </div>
-      <div class="gosyuin_body">
+      
+      <div class="gosyuin_edit">
+       <div class="gosyuin_body">
         <div class="gosyuin_detail">
           <p class="detail_title">【　寺院名　】<%= @gosyuin.title %></p>
         </div>
@@ -33,7 +35,7 @@
           <p class="detail_title">【　説明文　】</p>
           <p class="detail_caption"> <%= @gosyuin.caption %> </p>
         </div>
-
+       </div>
       </div>
     <div class="gosyuin_comments">
         <%# ログインしているユーザーには以下のコメント投稿フォームを表示する %>
