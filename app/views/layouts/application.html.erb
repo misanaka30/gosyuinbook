@@ -20,8 +20,8 @@
        
        <% if user_signed_in? %>
        <div class="head-right">
-        <span>ユーザー名:</span><%= link_to "#{current_user.name}", "#", class: :greeting_link %>
-        <%= link_to "ログアウト", destroy_user_session_path, class: :nav_logout, method: :delete %>
+        <%= link_to "ユーザー名：#{current_user.name}", "#", class: :nav_btn %>
+        <%= link_to "ログアウト", destroy_user_session_path, class: :nav_btn, method: :delete %>
         <%= link_to "新規投稿", new_gosyuin_path , class: :nav_btn %>
        </div>
        
@@ -35,9 +35,9 @@
       </div>
      </div>
     </header>
-    <%= yield %>
+    　<%= yield %>
     <footer class="footer">
-      <p class="copyright">Copyright © GOSYUIN BOOK all rights reserved.</p>
+     <p class="copyright">Copyright © GOSYUIN BOOK all rights reserved.</p>
     </footer>
   </body>
 </html>

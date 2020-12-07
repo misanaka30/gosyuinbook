@@ -1,13 +1,11 @@
 <div class="card">
-  <%= link_to gosyuins_path(prototype.id) do %>
-   <%= image_tag prototype.image, class: :card__img %>
+  <%= link_to  " #{gosyuin.user.name}", gosyuin_path(gosyuin.id), class: :card__user %>
+  <%= link_to gosyuin_path(gosyuin.id) do %>
+  <%= image_tag gosyuin.image, class: :card__img %>
   <% end %>
-  <div class="card__body">
-    <%= link_to "#{prototype.title}", prototype_path(prototype.id), class: :card__title %>
-    <p class="card__summary">
-      <%= "#{prototype.catch_copy}" %>
-    </p>
-    <%= link_to  "by #{prototype.user.name}", user_path(prototype.user), class: :card__user %>
+  <div class="card_body">
+    <%= link_to "#{gosyuin.title}", gosyuin_path(gosyuin.id), class: :card__title %>
+    <p class="card__summary"><%= "#{gosyuin.caption}" %></p>
   </div>
 </div>
 

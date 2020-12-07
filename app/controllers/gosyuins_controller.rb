@@ -1,7 +1,6 @@
 class GosyuinsController < ApplicationController
   before_action :authenticate_user!, except: [:index] 
 
-
   def index
     @gosyuins = Gosyuin.all
   end
@@ -19,6 +18,9 @@ class GosyuinsController < ApplicationController
     end
   end
 
+  def show
+   @gosyuin = Gosyuin.find(params[:id])
+  end 
 
   private
   def gosyuin_params

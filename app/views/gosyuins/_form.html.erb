@@ -1,6 +1,6 @@
 <%= form_with model: gosyuin, local: true do |f|%>
   <div class="field">
-    <%= f.label :title, "名称" %><br />
+    <%= f.label :title, "寺院名" %><br />
     <%= f.text_field :title %>
   </div>
 
@@ -10,17 +10,17 @@
   </div>
 
   <div class="field">
-   <%= f.label :stamp_id, "記録するもの１" %><br />
+   <%= f.label :stamp_id, "種類" %><br />
    <%= f.collection_select(:stamp_id, Stamp.all, :id, :name, {}, {class:"select-box", id:"stamp"}) %>
   </div>
 
   <div class="field">
-   <%= f.label :limited_id, "記録するもの２" %><br />
+   <%= f.label :limited_id, "希少度" %><br />
    <%= f.collection_select(:limited_id, Limited.all, :id, :name, {}, {class:"select-box", id:"limited"}) %>
   </div>
 
   <div class="field">
-    <%= f.label :caption, "キャプション" %><br />
+    <%= f.label :caption, "説明文" %><br />
     <%= f.text_area :caption, class: :form__text %>
   </div>
 
@@ -30,6 +30,6 @@
   </div>
 
   <div class="actions">
-    <%= f.submit "保存する", class: :form__btn  %>
+    <%= f.submit "保存", class: :form__btn  %>
   </div>
 <% end %>

@@ -1,13 +1,13 @@
 class Gosyuin < ApplicationRecord
-belongs_to :user
-has_one_attached :image 
+ belongs_to :user
+ has_one_attached :image 
 
-validates :title, presence: true
-validates :caption, presence: true
-validates :image, presence: true
-
-extend ActiveHash::Associations::ActiveRecordExtensions
-  belongs_to :stamp
-  belongs_to :limited
-  belongs_to :prefecture
+ extend ActiveHash::Associations::ActiveRecordExtensions
+ belongs_to :stamp
+ belongs_to :limited
+ belongs_to :prefecture
+ 
+ validates :title, presence: true
+ validates :caption, presence: true
+ validates :image, presence: true
 end
