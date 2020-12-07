@@ -1,35 +1,37 @@
 <%= form_with model: gosyuin, local: true do |f|%>
+ <div class="form_field">
   <div class="field">
-    <%= f.label :title, "寺院名" %><br />
-    <%= f.text_field :title %>
+    <%= f.label :title, "【　寺院名　】" %><br />
+    <%= f.text_field( :title, class: "select-box") %>
   </div>
 
-　<div class="field">
-   <%= f.label :prefecture_id, "県名" %><br />
+  <div class="field">
+   <%= f.label :prefecture_id, "【　県　名　】" %><br />
    <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class:"select-box", id:"prefecture"}) %>
   </div>
 
   <div class="field">
-   <%= f.label :stamp_id, "種類" %><br />
+   <%= f.label :stamp_id, "【　種　類　】" %><br />
    <%= f.collection_select(:stamp_id, Stamp.all, :id, :name, {}, {class:"select-box", id:"stamp"}) %>
   </div>
 
   <div class="field">
-   <%= f.label :limited_id, "希少度" %><br />
+   <%= f.label :limited_id, "【　希少度　】" %><br />
    <%= f.collection_select(:limited_id, Limited.all, :id, :name, {}, {class:"select-box", id:"limited"}) %>
   </div>
 
   <div class="field">
-    <%= f.label :caption, "説明文" %><br />
-    <%= f.text_area :caption, class: :form__text %>
+    <%= f.label :caption, "【　説明文　】" %><br />
+    <%= f.text_area :caption, class: :form_text %>
   </div>
 
   <div class="field">
-    <%= f.label :image, "画像" %><br />
+    <%= f.label :image, "【　画　像　】" %><br />
     <%= f.file_field :image %>
   </div>
 
   <div class="actions">
-    <%= f.submit "保存", class: :form__btn  %>
+    <%= f.submit "保存", class: :form_btn  %>
   </div>
+ </div> 
 <% end %>

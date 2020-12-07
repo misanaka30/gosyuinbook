@@ -130,3 +130,48 @@
   justify-content: center;
   padding-top: 16px;
 }
+
+/* フォーム */
+.form__wrapper{
+  min-height: calc(100vh - 161px);
+}
+.form_text {
+  width: 40%;
+  height: 10vh;
+}
+.field{
+  margin: 10px 0;
+}
+.actions{
+  margin-bottom: 40px;
+}
+.form_btn{
+  display: inline-block;
+  padding: 0.4em 1.6em;
+  font-size: 0.8em;
+  color: #fff;
+  text-decoration: none;
+  user-select: none;
+  background: rgb(145, 51, 96);
+  border: 1px rgb(145, 51, 96) solid;
+  border-radius: 3px;
+  box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 2px 0 rgba(0, 0, 0, 0.12);
+  transition: 0.2s ease;
+}
+.form_btn:hover {
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2), 0 1px 8px 0 rgba(0, 0, 0, 0.12);
+  cursor: pointer;
+}
+.page-heading{
+  font-size: 30px;
+  margin-bottom: 28px;
+  color:rgb(145, 51, 96);
+  text-align: center;
+}
+.form_field{
+  text-align: center;
+}
+.select-box{
+  padding: 10px;
+  width: 20%;
+}

@@ -8,7 +8,7 @@
       <%# プロトタイプの投稿者とログインしているユーザーが同じであれば以下を表示する %>
       <% if user_signed_in? && current_user.id == @gosyuin.user_id %>
         <div class="gosyuin_manage">
-          <%#= link_to "編集", edit_gosyuin_path, class: :gosyuin_btn %>
+          <%= link_to "編集", edit_gosyuin_path, class: :gosyuin_btn %>
           <%#= link_to "削除", gosyuin_path(@gosyuin.id), method: :delete , class: :gosyuin_btn %>
         </div>
         <% end %>
