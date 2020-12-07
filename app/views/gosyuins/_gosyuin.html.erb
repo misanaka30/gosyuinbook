@@ -1,0 +1,11 @@
+<div class="card">
+  <%= link_to  " #{gosyuin.user.name}", gosyuin_path(gosyuin.id), class: :card__user %>
+  <%= link_to gosyuin_path(gosyuin.id) do %>
+  <%= image_tag gosyuin.image, class: :card__img %>
+  <% end %>
+  <div class="card_body">
+    <%= link_to "#{gosyuin.title}", gosyuin_path(gosyuin.id), class: :card__title %>
+    <p class="card__summary"><%= "#{gosyuin.caption}" %></p>
+  </div>
+</div>
+

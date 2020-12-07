@@ -1,0 +1,50 @@
+<main class="main">
+  <div class="inner">
+    <div class="gosyuin_wrapper">
+      <p class="gosyuin_hedding">
+        <%= @gosyuin.title %>
+      </p>
+      <%#= link_to "#{@gosyuin.user.name}", user_path(@gosyuin.user), class: :gosyuin_user %>
+      <%# プロトタイプの投稿者とログインしているユーザーが同じであれば以下を表示する %>
+      <% if user_signed_in? && current_user.id == @gosyuin.user_id %>
+        <div class="gosyuin_manage">
+          <%#= link_to "編集", edit_gosyuin_path, class: :gosyuin_btn %>
+          <%#= link_to "削除", gosyuin_path(@gosyuin.id), method: :delete , class: :gosyuin_btn %>
+        </div>
+        <% end %>
+      <%# // プロトタイプの投稿者とログインしているユーザーが同じであれば上記を表示する %>
+      <div class="gosyuin_image">
+        <%= image_tag @gosyuin.image %>
+      </div>
+      <div class="gosyuin_body">
+        <div class="gosyuin_detail">
+          <p class="detail_title">【　寺院名　】<%= @gosyuin.title %></p>
+        </div>
+        <div class="gosyuin_detail">
+          <p class="detail_title">【　県　名　】<%= @gosyuin.prefecture.name %></p>
+        </div>
+        <div class="gosyuin_detail">
+          <p class="detail_title">【　種　類　】<%= @gosyuin.stamp.name %></p>
+        </div>
+        <div class="gosyuin_detail">
+          <p class="detail_title">【　希少度　】<%= @gosyuin.limited.name %></p>
+        </div>
+        <div class="gosyuin_detail">
+          <p class="detail_title">【　説明文　】<%= @gosyuin.caption %></p>
+        </div>
+
+      </div>
+    <div class="gosyuin_comments">
+        <%# ログインしているユーザーには以下のコメント投稿フォームを表示する %>
+       
+        <%# // ログインしているユーザーには上記を表示する %>
+        <ul class="comments_lists">
+          <%# 投稿に紐づくコメントを一覧する処理を記述する %>
+          
+            
+          <%# // 投稿に紐づくコメントを一覧する処理を記述する %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</main>
