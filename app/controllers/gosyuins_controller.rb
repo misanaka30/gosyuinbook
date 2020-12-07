@@ -1,5 +1,6 @@
 class GosyuinsController < ApplicationController
-  before_action :authenticate_user!, except: [:index] 
+  before_action :authenticate_user!, except: [:index, :show] 
+  before_action :set_gosyuin, except: [:index, :new, :create]
 
   def index
     @gosyuins = Gosyuin.all
@@ -19,24 +20,30 @@ class GosyuinsController < ApplicationController
   end
 
   def show
-   @gosyuin = Gosyuin.find(params[:id])
   end 
 
   def edit
-   @gosyuin = Gosyuin.find(params[:id])
   end
   
   def update
-    @gosyuin = Gosyuin.find(params[:id])
-    if @gosyuin.update(gosyuin_params)
-       redirect_to root_path
-    else
-       render :edit
-    end
+   if @gosyuin.update(gosyuin_params)
+      redirect_to root_path
+   else
+      render :edit
+   end
+  end
+
+  def destroy
+    @gosyuin.destroy
+    redirect_to root_path
   end
 
   private
   def gosyuin_params
    params.require(:gosyuin).permit(:title, :prefecture_id, :stamp_id, :limited_id, :caption, :image ).merge(user_id: current_user.id)
+  end
+
+  def set_gosyuin
+    @gosyuin = Gosyuin.find(params[:id])
   end
 end

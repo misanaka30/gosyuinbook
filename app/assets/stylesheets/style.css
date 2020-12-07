@@ -72,6 +72,7 @@
 }
 .card__summary {
   font-size: 16px;
+  text-align: center;
 }
 .card__user {
   display: block;
@@ -111,6 +112,12 @@
   box-shadow: 0px 0px 0px 10px #dbd4da;
   border: dashed 2px rgb(145, 51, 96) ;
   border-radius: 8px;
+  width: 50vw;
+  display: block;
+}
+.gosyuin_edit{
+  display: flex;
+  justify-content: center;
 }
 .gosyuin_detail{
   display: flex;
@@ -129,6 +136,22 @@
   display: flex;
   justify-content: center;
   padding-top: 16px;
+}
+.gosyuin_btn{
+  display: inline-block;
+  padding: 0.4em 1.6em;
+  font-size: 0.8em;
+  color: rgb(145, 51, 96);
+  text-decoration: none;
+  user-select: none;
+  border: 1px rgb(145, 51, 96) solid;
+  border-radius: 3px;
+  transition: 0.4s ease;
+  margin-right: 3px;
+}
+.gosyuin_btn:hover{
+  color: #fff;
+  background: rgb(145, 51, 96);
 }
 
 /* フォーム */
