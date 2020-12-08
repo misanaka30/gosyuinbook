@@ -1,0 +1,36 @@
+<div class="comment_head">
+ <div class="gosyuin__edit">
+   <div class="gosyuin__image">
+    <%= image_tag @gosyuin.image.variant(resize: '100x100'), class: :gosyuin__img %>
+   </div>
+   <div class="gosyuin__name">
+    by <%= @gosyuin.user.name %>
+   </div>
+ </div>
+ <div class="gosyuon_comments">
+   <% if current_user %>
+    <%= form_with(model: [@gosyuin, @comment], local: true) do |f| %>
+      <div class="comment_form">
+       <div class="field">
+        <p class = "field_text"><%= f.label :text, "コメント" %><br /><p>
+        <%= f.text_field :text , class: :text_field%>
+       </div>  
+       <div class="actions">
+        <%= f.submit "送信", class: :form__btn %>
+       </div>
+      </div>
+    <% end %> 
+   <% end%>
+ </div>
+</div>
+
+ <ul class="comments_lists">
+   <% if @comments %>
+      <% @comments.each do |comment| %>
+        <li class="comments_list">
+          <%= link_to( "#{comment.user.name}", "#", class: :comment_user) %>
+          <%= comment.text %>
+        </li>
+      <% end %>
+   <% end %>
+ </ul>

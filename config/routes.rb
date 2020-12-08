@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
-  #get 'gosyuins/index'
   root to: "gosyuins#index"
-  resources :gosyuins
+  resources :gosyuins do
+    resources :comments, only: [:index, :create]
+  end
 end
