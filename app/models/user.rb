@@ -9,4 +9,5 @@ class User < ApplicationRecord
   validates :prefecture_id, numericality: { other_than: 0, message: "can't be blank" }
 
   has_many :gosyuins
+  has_many :comments
 end

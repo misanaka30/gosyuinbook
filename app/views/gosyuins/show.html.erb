@@ -37,17 +37,10 @@
         </div>
        </div>
       </div>
-    <div class="gosyuin_comments">
-        <%# ログインしているユーザーには以下のコメント投稿フォームを表示する %>
-       
-        <%# // ログインしているユーザーには上記を表示する %>
-        <ul class="comments_lists">
-          <%# 投稿に紐づくコメントを一覧する処理を記述する %>
-          
-            
-          <%# // 投稿に紐づくコメントを一覧する処理を記述する %>
-        </ul>
-      </div>
+
+      <p class="comment_btn">
+        <%= link_to "コメント",  gosyuin_comments_path(@gosyuin, @comment), class: :gosyuin_btn %>
+      </p>
     </div>
   </div>
 </main>
